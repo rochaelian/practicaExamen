@@ -52,8 +52,8 @@ public class AntologyController {
 	public String findAnthologyToEdit(Model model, @PathVariable long id) {
 		Optional<Antology> possibleData = anthologyService.get(id);
 		if (possibleData.isPresent()) {
-			model.addAttribute("anthologyToEdit",possibleData.get());
-			return "edit";	
+			model.addAttribute("anthologyToActualizar",possibleData.get());
+			return "actualizar";	
 		}
 		return "notfound";
 	}
