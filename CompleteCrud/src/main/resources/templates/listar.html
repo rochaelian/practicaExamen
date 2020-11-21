@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8"></meta>
 <meta http-equiv="Content-Type" content="text/html"></meta>
-<title>Anthologies</title>
+<title>Workshops</title>
 </head>
 <body>
 	<div>
-		<h1>List of Anthologies</h1>
+		<h1>Lista de Workshops</h1>
 		<ul>
-			<div th:each="entry : ${anthologies}">
+			<div th:each="entry : ${workshops}">
 				<li>
 					<h4>
-						<span th:text="${entry.name}">Name</span>:<span th:text="${entry.text}">Subtitulo</span>:<span th:text="${entry.date}"></span><br/>
+						<span th:text="${entry.name}">Nombre</span>:<span th:text="${entry.autor}">Autor</span>:<span th:text="${entry.objetivo}">Objetivo</span>:<span th:text="${entry.categoria}">Categoria</span>:<span th:text="${entry.tiempoDuracion}">Duración</span><br/>
 						<a th:href="@{/actualizar/{id}(id=${entry.id})}">Edit</a><br/>
 						<a th:href="@{/detalle/{id}(id=${entry.id})}">Ver todo el detalle</a><br/>
 					</h4>

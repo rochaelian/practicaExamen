@@ -8,17 +8,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Article {
+public class Tarea {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 	
-	private String name;
+	String name;
+	String descripcion;
+	String textoLeido;
 	
 	@ManyToOne
     @JoinColumn(name="cart_id", nullable=false)
-	private Antology anthology;
+	private Workshop workshop;
 
 	public long getId() {
 		return id;
@@ -36,12 +38,28 @@ public class Article {
 		this.name = name;
 	}
 
-	public Antology getAnthology() {
-		return anthology;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setAnthology(Antology anthology) {
-		this.anthology = anthology;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public String getTextoLeido() {
+		return textoLeido;
+	}
+
+	public void setTextoLeido(String textoLeido) {
+		this.textoLeido = textoLeido;
+	}
+
+	public Workshop getWorkshop() {
+		return workshop;
+	}
+
+	public void setWorkshop(Workshop workshop) {
+		this.workshop = workshop;
 	}
 	
 	

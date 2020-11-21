@@ -6,32 +6,32 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cenfotec.crud.domain.Antology;
-import com.cenfotec.crud.repo.AntologyRepository;
+import com.cenfotec.crud.domain.Workshop;
+import com.cenfotec.crud.repo.WorkshopRepository;
 
 @Service
-public class AntologyServiceImpl implements AntologyService {
+public class WorkshopServiceImpl implements WorkshopService {
 
 	@Autowired
-	AntologyRepository repo;
+	WorkshopRepository repo;
 	
 	@Override
-	public void save(Antology antology) {
-		repo.save(antology);
+	public void save(Workshop workshop) {
+		repo.save(workshop);
 	}
 
 	@Override
-	public Optional<Antology> get(Long id) {
+	public Optional<Workshop> get(Long id) {
 		return repo.findById(id);
 	}
 
 	@Override
-	public List<Antology> find(String name) {
+	public List<Workshop> find(String name) {
 		return repo.findByNameContaining(name);
 	}
 
 	@Override
-	public List<Antology> getAll() {
+	public List<Workshop> getAll() {
 		return repo.findAll();
 	}
 
